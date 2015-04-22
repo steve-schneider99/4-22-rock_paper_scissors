@@ -10,8 +10,7 @@ end
 get('/outcome') do
   @player1 = params.fetch('player_1_outcome')
   @player2 = params.fetch('player_2_outcome')
-  if @player1.eql?(@player2)
-    "You have tied."
+  @outcome = @player1.rps(@player2)
 
   erb(:outcome)
   end
